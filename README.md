@@ -1,2 +1,2 @@
 # data-structures
-Famos Data structures ft. C++
+Famous Data structures ft. C++
