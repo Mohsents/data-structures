@@ -6,7 +6,7 @@
 #include "linkedlist.h"
 #include "doublylinkedlist.hpp"
 #include "circularDoublyLinkedList.hpp"
-#include "BinaryTree.hpp"
+#include "binaryTree.hpp"
 using namespace std;
 
 // void show_array(int array[], int lenght) {
@@ -24,7 +24,6 @@ int main() {
 
     // int res = linear_search(array,length, key);
     //binary_search(sorted_array, 0, length - 1, key);
-    
 
     /* if(res == -1) {
         cout << "item not found!";
@@ -149,6 +148,16 @@ int main() {
     tree.show(tree.root);
     cout << "\n";
     tree.delete_tree(tree.root);
-    
+    tree.root_to_leaf(tree.root);
+    cout << "\n";
+    cout << "In-order teraversal:";
+    tree.in_order_traversal(tree.root);
+    cout << endl;
+    cout << "Pre-order teraversal:";
+    tree.pre_order_teraversal(tree.root);
+    cout << endl;
+    cout << "Level-order traversal:";
+    tree.level_order_traversal(tree.root);
+
     return 0;
 }
