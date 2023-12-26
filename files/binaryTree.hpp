@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <stdlib.h>
 #include <bits/stdc++.h>
@@ -54,7 +55,6 @@ template <class T> class BinaryTree {
                 return left_heigth + 1;
           	else return rigth_heigth + 1;
         }
-      
     }
 
     int get_count_leaf(Node *pos) {
@@ -189,4 +189,84 @@ template <class T> class BinaryTree {
      }
   }
 
+  bool is_identical(Node *root_a, Node *root_b) {
+	if(root_a == NULL && root_b == NULL) {
+		return true;
+	}
+
+	if(root_a != NULL && root_b != NULL){
+		return root_a -> data == root_b -> data &&
+		is_identical(root_a -> left, root_b -> left) &&
+ 		is_identical(root_a -> rigth, root_b -> rigth);
+	}
+	return false;
+   }
+
+  int find_level(Node *root, int item) {
+	if(root == NULL) return -1;
+
+	int dist = 0;
+	if(root -> data == item ||
+	(dist = find_level(root -> left, item)) >= 0 ||
+	(dist = find_level(root -> rigth, item)) >= 0) {
+		return dist + 1;
+	}
+
+	return dist;
+   }
+
+  bool find_ancestors(Node *root, int item) {
+ 	if(root == NULL) return false;
+
+	if(root -> data == item) return true;
+
+	if(find_ancestors(root -> left, item) || find_ancestors(root -> rigth, item)) {
+		cout << root -> data << " ";
+		return true;
+	}
+	return false;
+   }
+
+  bool is_complete_tree(Node *root) {
+	queue<Node *> queue;
+	bool flag = false;
+	queue.push(root);
+
+	if(root == NULL) return true;
+
+	while (!queue.empty()) {
+        Node* temp = queue.front();
+        queue.pop();
+
+        if (temp -> left) {
+            if (flag == true)
+                return false;
+
+            queue.push(temp -> left);
+        } else flag = true;
+
+        if (temp -> rigth) {
+            if (flag == true)
+                return false;
+
+            queue.push(temp -> rigth);
+        } else flag = true;
+
+        return true;
+    }
+  }
+
+
+  Node *find_LCA(Node *root, int a, int b) {
+	if(root == NULL) return NULL;
+
+	if(root -> data == a || root -> data == b) return root;
+
+	Node *left_LCA = find_LCA(root -> left, a, b);
+	Node *rigth_LCA = find_LCA(root -> rigth, a, b);
+
+	if(left_LCA && rigth_LCA) return root;
+
+	return (left_LCA != NULL) ? left_LCA : rigth_LCA;
+  }
 };

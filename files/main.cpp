@@ -147,17 +147,31 @@ int main() {
     cout << "Tree node count: " << tree.get_count(tree.root) << "\n";
     tree.show(tree.root);
     cout << "\n";
-    tree.delete_tree(tree.root);
+    //tree.delete_tree(tree.root);
     tree.root_to_leaf(tree.root);
     cout << "\n";
+
     cout << "In-order teraversal:";
     tree.in_order_traversal(tree.root);
+
     cout << endl;
     cout << "Pre-order teraversal:";
     tree.pre_order_teraversal(tree.root);
+
     cout << endl;
     cout << "Level-order traversal:";
     tree.level_order_traversal(tree.root);
+    cout << endl;
 
+    int item = 5;
+    cout << "Level of item " << item << " is: " << tree.find_level(tree.root, item) << endl;
+    cout << "Ancestors of item " << item << " is: " << tree.find_ancestors(tree.root, item) << endl;
+
+    cout << "Is complete Tree: " << tree.is_complete_tree(tree.root) << endl;
+
+    int a = 5;
+    int b = 3;
+    cout << "LCA items " << a << " and " << b << ": " << tree.find_LCA(tree.root, a, b) -> data << endl;
     return 0;
 }
+
