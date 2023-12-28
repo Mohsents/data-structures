@@ -7,6 +7,7 @@
 #include "doublylinkedlist.hpp"
 #include "circularDoublyLinkedList.hpp"
 #include "binaryTree.hpp"
+#include "BSTTree.hpp"
 using namespace std;
 
 // void show_array(int array[], int lenght) {
@@ -138,42 +139,62 @@ int main() {
     // cout << "\n";
     // cout << "List length = " << list.get_length() << "\n";
 
-    BinaryTree<int> tree;
-    tree.create_tree(1);
+    //BinaryTree<int> tree;
+    //tree.create_tree(1);
 
-    cout << "Tree heigth: " << tree.get_height(tree.root) << "\n";
-    cout << "Tree max value: " << tree.get_max(tree.root) << "\n";
-    cout << "Tree leaf count: " << tree.get_count_leaf(tree.root) << "\n";
-    cout << "Tree node count: " << tree.get_count(tree.root) << "\n";
-    tree.show(tree.root);
-    cout << "\n";
+    //cout << "Tree heigth: " << tree.get_height(tree.root) << "\n";
+    //cout << "Tree max value: " << tree.get_max(tree.root) << "\n";
+    //cout << "Tree leaf count: " << tree.get_count_leaf(tree.root) << "\n";
+    //cout << "Tree node count: " << tree.get_count(tree.root) << "\n";
+    //tree.show(tree.root);
+    //cout << "\n";
     //tree.delete_tree(tree.root);
-    cout << "In-order teraversal:";
-    tree.in_order_traversal(tree.root);
+    //cout << "In-order teraversal:";
+    //tree.in_order_traversal(tree.root);
 
+    //cout << endl;
+    //cout << "Pre-order teraversal:";
+    //tree.pre_order_teraversal(tree.root);
+
+    //cout << endl;
+    //cout << "Level-order traversal:";
+    //tree.level_order_traversal(tree.root);
+    //cout << endl;
+
+    //int item = 5;
+    //cout << "Level of item " << item << " is: " << tree.find_level(tree.root, item) << endl;
+    //cout << "Ancestors of item " << item << " is: " << tree.find_ancestors(tree.root, item) << endl;
+
+    //cout << "Is complete Tree: " << tree.is_complete_tree(tree.root) << endl;
+
+    //int a = 5;
+    //int b = 3;
+    //cout << "LCA items " << a << " and " << b << ": " << tree.find_LCA(tree.root, a, b) -> data << endl;
+
+    //cout << "In-order Traversal threaded tree: ";
+    //tree.in_order_threaded_travers(tree.root);
+    //cout << endl;
+
+    //cout << "Sum of all root to leaf paths: " << tree.root_to_leaf_sum(tree.root, 0) << endl;
+
+    BSTTree<int> bsttree;
+    bsttree.insert(bsttree.root, 10);
+    bsttree.insert(bsttree.root, 5);
+    bsttree.insert(bsttree.root, 6);
+    bsttree.insert(bsttree.root, 8);
+    bsttree.insert(bsttree.root, 20);
+    bsttree.insert(bsttree.root, 98);
+    bsttree.insert(bsttree.root, 12);
+    bsttree.insert(bsttree.root, 23);
+    bsttree.insert(bsttree.root, 45);
+    bsttree.insert(bsttree.root, 50);
+
+    cout << "In-order Traversal: ";
+    bsttree.inorder_travers(bsttree.root);
     cout << endl;
-    cout << "Pre-order teraversal:";
-    tree.pre_order_teraversal(tree.root);
 
-    cout << endl;
-    cout << "Level-order traversal:";
-    tree.level_order_traversal(tree.root);
-    cout << endl;
+    int key = 20;
+    cout << "Is item " << key << " founded?: " << bsttree.search(bsttree.root, key) << endl;
 
-    int item = 5;
-    cout << "Level of item " << item << " is: " << tree.find_level(tree.root, item) << endl;
-    cout << "Ancestors of item " << item << " is: " << tree.find_ancestors(tree.root, item) << endl;
-
-    cout << "Is complete Tree: " << tree.is_complete_tree(tree.root) << endl;
-
-    int a = 5;
-    int b = 3;
-    cout << "LCA items " << a << " and " << b << ": " << tree.find_LCA(tree.root, a, b) -> data << endl;
-
-    cout << "In-order Traversal threaded tree: ";
-    tree.in_order_threaded_travers(tree.root);
-    cout << endl;
-
-    cout << "Sum of all root to leaf paths: " << tree.root_to_leaf_sum(tree.root, 0);
     return 0;
 }
