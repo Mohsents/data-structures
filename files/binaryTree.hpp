@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <stdlib.h>
 #include <bits/stdc++.h>
@@ -9,6 +8,7 @@ template <class T> class BinaryTree {
     private:
         struct Node {
             T data;
+	    bool rigthThread;
             struct Node *left;
             struct Node *rigth;
         }*pos;
@@ -107,31 +107,6 @@ template <class T> class BinaryTree {
         }
 
         return node_data;
-    }
-
-    void root_to_leaf(Node *pos) {
-        string path;
-        print_paht(pos, path);
-    }
-
-    void print_paht(Node *pos, string path) {
-        if(pos == NULL) return;
-
-        path.append(to_string(pos -> data));
-
-        if (pos -> left == NULL && pos -> rigth == NULL) {
-            print_root_to_leaf_sum(path);
-        } else {
-            print_paht(pos -> left, path);
-            print_paht(pos -> rigth, path);
-        }
-    }
-
-    void print_root_to_leaf_sum(string path) {
-        static int sum = 0;
-        sum += stoi(path);
-
-        cout << "Sum " << path << "=" << sum << " + ";
     }
 
     void in_order_traversal(Node *root) {
@@ -268,5 +243,36 @@ template <class T> class BinaryTree {
 	if(left_LCA && rigth_LCA) return root;
 
 	return (left_LCA != NULL) ? left_LCA : rigth_LCA;
+  }
+
+  Node* find_left_most(Node* node){
+    if (node == NULL)
+        return NULL;
+
+    while (node -> left != NULL)
+        node = node -> left;
+
+    return node;
+  }
+
+  // We must create a threaded tree.
+  void in_order_threaded_travers(Node *root) {
+	Node *curr = find_left_most(root);
+
+	while(curr != NULL) {
+		cout << curr -> data << " ";
+		if(curr -> rigthThread) curr = curr -> rigth;
+		else curr = find_left_most(curr -> rigth);
+ 	}
+  }
+
+  int root_to_leaf_sum(Node *root, int x) {
+	if(root == NULL) return 0;
+
+	x = (x * 10 + root -> data);
+
+	if(root -> left == NULL && root -> rigth == NULL) return x;
+
+	return root_to_leaf_sum(root -> left, x) + root_to_leaf_sum(root -> rigth, x);
   }
 };

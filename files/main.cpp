@@ -148,9 +148,6 @@ int main() {
     tree.show(tree.root);
     cout << "\n";
     //tree.delete_tree(tree.root);
-    tree.root_to_leaf(tree.root);
-    cout << "\n";
-
     cout << "In-order teraversal:";
     tree.in_order_traversal(tree.root);
 
@@ -172,6 +169,11 @@ int main() {
     int a = 5;
     int b = 3;
     cout << "LCA items " << a << " and " << b << ": " << tree.find_LCA(tree.root, a, b) -> data << endl;
+
+    cout << "In-order Traversal threaded tree: ";
+    tree.in_order_threaded_travers(tree.root);
+    cout << endl;
+
+    cout << "Sum of all root to leaf paths: " << tree.root_to_leaf_sum(tree.root, 0);
     return 0;
 }
-
