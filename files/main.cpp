@@ -196,5 +196,15 @@ int main() {
     int key = 20;
     cout << "Is item " << key << " founded?: " << bsttree.search(bsttree.root, key) << endl;
 
+    bsttree.remove(bsttree.root, key);
+    cout << "After remove item " << key << endl;
+    bsttree.inorder_travers(bsttree.root);
+    cout << endl;
+
+    int n = 4;
+    cout << n << "th largest item in tree is:";
+    bsttree.nth_largest(bsttree.root, n);
+    cout << endl;
+
     return 0;
 }

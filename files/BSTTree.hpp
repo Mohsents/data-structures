@@ -56,4 +56,52 @@ template <class T> class BSTTree {
         }
 	return false;
   }
+
+  Node* find_min(Node *root) {
+	Node *temp = root;
+	// The most left node is smallest in BSD tree
+	while(temp -> left != NULL) temp = temp -> left;
+	return temp;
+  }
+
+  Node* remove(Node *root, int key) {
+	Node *temp;
+	if(root == NULL) return root;
+
+	if(key < root -> data)
+	root -> left = remove(root -> left, key);
+	else if(key > root -> data)
+	root -> rigth = remove(root -> rigth, key);
+	else {
+		if(root -> left == NULL) {
+			temp = root -> rigth;
+			free(root);
+			return temp;
+		} else if(root -> rigth == NULL) {
+			temp = root -> left;
+			free(root);
+			return temp;
+		}
+
+		temp = find_min(root -> rigth);
+		root -> data = temp -> data;
+		root -> rigth = remove(root -> rigth, temp -> data);
+	}
+	return root;
+  }
+
+  void nth_largest(Node *root, int n) {
+	static int count = 0;
+	if(root == NULL || count >= n) return;
+
+	nth_largest(root -> rigth, n);
+	count++;
+	if(count == n) {
+		cout << root -> data;
+		return;
+	}
+
+	nth_largest(root -> left, n);
+  }
+
 };
