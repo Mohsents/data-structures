@@ -8,6 +8,7 @@
 #include "circularDoublyLinkedList.hpp"
 #include "binaryTree.hpp"
 #include "BSTTree.hpp"
+#include "AVLTree.hpp"
 using namespace std;
 
 // void show_array(int array[], int lenght) {
@@ -177,34 +178,43 @@ int main() {
 
     //cout << "Sum of all root to leaf paths: " << tree.root_to_leaf_sum(tree.root, 0) << endl;
 
-    BSTTree<int> bsttree;
-    bsttree.insert(bsttree.root, 10);
-    bsttree.insert(bsttree.root, 5);
-    bsttree.insert(bsttree.root, 6);
-    bsttree.insert(bsttree.root, 8);
-    bsttree.insert(bsttree.root, 20);
-    bsttree.insert(bsttree.root, 98);
-    bsttree.insert(bsttree.root, 12);
-    bsttree.insert(bsttree.root, 23);
-    bsttree.insert(bsttree.root, 45);
-    bsttree.insert(bsttree.root, 50);
+//    BSTTree<int> bsttree;
+//    bsttree.insert(bsttree.root, 10);
+//    bsttree.insert(bsttree.root, 5);
+//    bsttree.insert(bsttree.root, 6);
+//    bsttree.insert(bsttree.root, 8);
+//    bsttree.insert(bsttree.root, 20);
+//    bsttree.insert(bsttree.root, 98);
+//    bsttree.insert(bsttree.root, 12);
+//   bsttree.insert(bsttree.root, 23);
+//    bsttree.insert(bsttree.root, 45);
+//    bsttree.insert(bsttree.root, 50);
 
-    cout << "In-order Traversal: ";
-    bsttree.inorder_travers(bsttree.root);
-    cout << endl;
+//    cout << "In-order Traversal: ";
+//    bsttree.inorder_travers(bsttree.root);
+//    cout << endl;
 
-    int key = 20;
-    cout << "Is item " << key << " founded?: " << bsttree.search(bsttree.root, key) << endl;
+    //int key = 20;
+//    cout << "Is item " << key << " founded?: " << bsttree.search(bsttree.root, key) << endl;
 
-    bsttree.remove(bsttree.root, key);
-    cout << "After remove item " << key << endl;
-    bsttree.inorder_travers(bsttree.root);
-    cout << endl;
+//    bsttree.remove(bsttree.root, key);
+//    cout << "After remove item " << key << endl;
+//    bsttree.inorder_travers(bsttree.root);
+//    cout << endl;
 
-    int n = 4;
-    cout << n << "th largest item in tree is:";
-    bsttree.nth_largest(bsttree.root, n);
-    cout << endl;
+//    int n = 4;
+//    cout << n << "th largest item in tree is:";
+//    bsttree.nth_largest(bsttree.root, n);
+//    cout << endl;
+
+    AVLTree<int> avl_tree;
+    avl_tree.add(avl_tree.root, 1);
+    avl_tree.add(avl_tree.root, 2);
+    avl_tree.add(avl_tree.root, 3);
+    avl_tree.add(avl_tree.root, 4);
+
+    cout << "Preorder teraversal: ";
+    avl_tree.preorder(avl_tree.root);
 
     return 0;
 }
