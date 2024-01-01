@@ -215,6 +215,12 @@ int main() {
 
     cout << "Preorder teraversal: ";
     avl_tree.preorder(avl_tree.root);
+    cout << endl;
 
-    return 0;
+    int item = 3;
+    cout << "After delete item: " << item << endl;
+    avl_tree.deleteNode(avl_tree.root, item);
+    avl_tree.preorder(avl_tree.root);
+ 
+   return 0;
 }
