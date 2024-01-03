@@ -85,7 +85,7 @@ class HeapTree {
 				swap(&minTree[i], &minTree[smallest]);
 				minHeapify(smallest);
 			}
-	}
+		}
 
 		int minRootRemove() {
 			int root;
@@ -119,7 +119,7 @@ class HeapTree {
 				swap(&maxTree[i], &maxTree[largest]);
 				maxHeapify(largest);
 			}
-	}
+		}
 
 		void maxHeapSort() {
     		int i;
@@ -130,7 +130,7 @@ class HeapTree {
         		swap(&maxTree[0], &maxTree[i]);
         		maxHeapify(0);
     		}
-	}
+		}
 
 		int maxRootRemove() {
 			int root;

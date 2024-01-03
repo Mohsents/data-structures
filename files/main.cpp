@@ -48,8 +48,8 @@ int main() {
 	htree.showMaxTree();
 
 	cout << endl;
-	cout << "Sort max tree: ";
-	htree.heapSort();
+	cout << "Sort max heap tree: ";
+	htree.maxHeapSort();
 	htree.showMaxTree();
 
 	return 0;
