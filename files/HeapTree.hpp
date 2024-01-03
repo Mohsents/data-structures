@@ -121,6 +121,17 @@ class HeapTree {
 			}
 	}
 
+		void heapSort() {
+    		int i;
+			for (i = maxHSize / 2 - 1; i >= 0; i--)
+        		maxHeapify(i);
+  
+    		for (i = maxHSize - 1; i >= 0; i--) {
+        		swap(&maxTree[0], &maxTree[i]);
+        		maxHeapify(0);
+    		}
+	}
+
 		int maxRootRemove() {
 			int root;
 			if(maxHSize <= 0) return INT_MAX;

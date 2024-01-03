@@ -47,5 +47,10 @@ int main() {
 	htree.maxRootRemove();
 	htree.showMaxTree();
 
+	cout << endl;
+	cout << "Sort max tree: ";
+	htree.heapSort();
+	htree.showMaxTree();
+
 	return 0;
 }
