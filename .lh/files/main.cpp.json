@@ -1,0 +1,58 @@
+{
+    "sourceFile": "files/main.cpp",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1704992740613,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704996015161,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,19 @@\n #include \"graph.hpp\"\n using namespace std;\n \n int main() {\n-\tcreateGraph();\n-\tdrawEgde(0, 1);\n-\tdrawEgde(0, 2);\n-\tdrawEgde(1, 2);\n-\tdrawEgde(2, 3);\n-\tdisplay();\n+\tGraph g;\n+\tg.addEdge(0, 1);\n+\tg.addEdge(0, 2);\n+\tg.addEdge(1, 2);\n+\tg.addEdge(2, 0);\n+\tg.addEdge(2, 3);\n+\tg.addEdge(3, 3);\n \n+\tcout << \"Following is Depth First Traversal\"\n+\t\t\t\" (starting from vertex 2) \\n\";\n+\n+\tg.DFS(2);\n+\n \treturn 0;\n }\n"
+                },
+                {
+                    "date": 1704996844979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n using namespace std;\n \n int main() {\n \tGraph g;\n-\tg.addEdge(0, 1);\n+\tg.addEdge(1, 1);\n \tg.addEdge(0, 2);\n \tg.addEdge(1, 2);\n \tg.addEdge(2, 0);\n \tg.addEdge(2, 3);\n"
+                },
+                {
+                    "date": 1704996850113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+#include <iostream>\n+#include \"arrays.h\"\n+#include \"queue.h\"\n+#include \"circularQueue.h\"\n+#include \"stack.h\"\n+#include \"linkedlist.h\"\n+#include \"doublylinkedlist.hpp\"\n+#include \"circularDoublyLinkedList.hpp\"\n+#include \"binaryTree.hpp\"\n+#include \"BSTTree.hpp\"\n+#include \"AVLTree.hpp\"\n+#include \"HeapTree.hpp\"\n+#include \"priorityQueue.hpp\"\n+#include \"graph.hpp\"\n+using namespace std;\n+\n+int main() {\n+\tGraph g;\n+\tg.addEdge(1, 2);\n+\tg.addEdge(3, 4);\n+\tg.addEdge(1, 2);\n+\tg.addEdge(2, 0);\n+\tg.addEdge(2, 3);\n+\tg.addEdge(3, 3);\n+\n+\tcout << \"Following is Depth First Traversal\"\n+\t\t\t\" (starting from vertex 2) \\n\";\n+\n+\tg.DFS(2);\n+\n+\treturn 0;\n+}\n"
+                },
+                {
+                    "date": 1704996856443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n int main() {\n \tGraph g;\n \tg.addEdge(1, 2);\n \tg.addEdge(3, 4);\n-\tg.addEdge(1, 2);\n+\tg.addEdge(4, 5);\n \tg.addEdge(2, 0);\n \tg.addEdge(2, 3);\n \tg.addEdge(3, 3);\n \n@@ -29,36 +29,4 @@\n \tg.DFS(2);\n \n \treturn 0;\n }\n-#include <iostream>\n-#include \"arrays.h\"\n-#include \"queue.h\"\n-#include \"circularQueue.h\"\n-#include \"stack.h\"\n-#include \"linkedlist.h\"\n-#include \"doublylinkedlist.hpp\"\n-#include \"circularDoublyLinkedList.hpp\"\n-#include \"binaryTree.hpp\"\n-#include \"BSTTree.hpp\"\n-#include \"AVLTree.hpp\"\n-#include \"HeapTree.hpp\"\n-#include \"priorityQueue.hpp\"\n-#include \"graph.hpp\"\n-using namespace std;\n-\n-int main() {\n-\tGraph g;\n-\tg.addEdge(1, 1);\n-\tg.addEdge(0, 2);\n-\tg.addEdge(1, 2);\n-\tg.addEdge(2, 0);\n-\tg.addEdge(2, 3);\n-\tg.addEdge(3, 3);\n-\n-\tcout << \"Following is Depth First Traversal\"\n-\t\t\t\" (starting from vertex 2) \\n\";\n-\n-\tg.DFS(2);\n-\n-\treturn 0;\n-}\n"
+                },
+                {
+                    "date": 1704996865181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+#include <iostream>\n+#include \"arrays.h\"\n+#include \"queue.h\"\n+#include \"circularQueue.h\"\n+#include \"stack.h\"\n+#include \"linkedlist.h\"\n+#include \"doublylinkedlist.hpp\"\n+#include \"circularDoublyLinkedList.hpp\"\n+#include \"binaryTree.hpp\"\n+#include \"BSTTree.hpp\"\n+#include \"AVLTree.hpp\"\n+#include \"HeapTree.hpp\"\n+#include \"priorityQueue.hpp\"\n+#include \"graph.hpp\"\n+using namespace std;\n+\n+int main() {\n+\tGraph g;\n+\tg.addEdge(1, 2);\n+\tg.addEdge(3, 4);\n+\tg.addEdge(4, 5);\n+\tg.addEdge(, 0);\n+\tg.addEdge(2, 3);\n+\tg.addEdge(3, 3);\n+\n+\tcout << \"Following is Depth First Traversal\"\n+\t\t\t\" (starting from vertex 2) \\n\";\n+\n+\tg.DFS(2);\n+\n+\treturn 0;\n+}\n"
+                },
+                {
+                    "date": 1704996870658,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+#include <iostream>\n+#include \"arrays.h\"\n+#include \"queue.h\"\n+#include \"circularQueue.h\"\n+#include \"stack.h\"\n+#include \"linkedlist.h\"\n+#include \"doublylinkedlist.hpp\"\n+#include \"circularDoublyLinkedList.hpp\"\n+#include \"binaryTree.hpp\"\n+#include \"BSTTree.hpp\"\n+#include \"AVLTree.hpp\"\n+#include \"HeapTree.hpp\"\n+#include \"priorityQueue.hpp\"\n+#include \"graph.hpp\"\n+using namespace std;\n+\n+int main() {\n+\tGraph g;\n+\tg.addEdge(1, 2);\n+\tg.addEdge(2, 3);\n+\tg.addEdge(3, 5);\n+\tg.addEdge(, 0);\n+\tg.addEdge(2, 3);\n+\tg.addEdge(3, 3);\n+\n+\tcout << \"Following is Depth First Traversal\"\n+\t\t\t\" (starting from vertex 2) \\n\";\n+\n+\tg.DFS(2);\n+\n+\treturn 0;\n+}\n"
+                },
+                {
+                    "date": 1704996881694,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,32 @@\n+#include <iostream>\n+#include \"arrays.h\"\n+#include \"queue.h\"\n+#include \"circularQueue.h\"\n+#include \"stack.h\"\n+#include \"linkedlist.h\"\n+#include \"doublylinkedlist.hpp\"\n+#include \"circularDoublyLinkedList.hpp\"\n+#include \"binaryTree.hpp\"\n+#include \"BSTTree.hpp\"\n+#include \"AVLTree.hpp\"\n+#include \"HeapTree.hpp\"\n+#include \"priorityQueue.hpp\"\n+#include \"graph.hpp\"\n+using namespace std;\n+\n+int main() {\n+\tGraph g;\n+\tg.addEdge(1, 2);\n+\tg.addEdge(2, 3);\n+\tg.addEdge(3, 4);\n+\tg.addEdge(4, 5);\n+\tg.addEdge(3, 5);\n+\tg.addEdge(3, 3);\n+\n+\tcout << \"Following is Depth First Traversal\"\n+\t\t\t\" (starting from vertex 2) \\n\";\n+\n+\tg.DFS(2);\n+\n+\treturn 0;\n+}\n"
+                },
+                {
+                    "date": 1704997127000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,113 +16,17 @@\n \n int main() {\n \tGraph g;\n \tg.addEdge(1, 2);\n-\tg.addEdge(2, 3);\n+\tg.addEdge(2, 1);\n \tg.addEdge(3, 4);\n \tg.addEdge(4, 5);\n \tg.addEdge(3, 5);\n-\tg.addEdge(3, 3);\n+\tg.addEdge(5, 6);\n \n \tcout << \"Following is Depth First Traversal\"\n \t\t\t\" (starting from vertex 2) \\n\";\n \n \tg.DFS(2);\n \n \treturn 0;\n }\n-#include <iostream>\n-#include \"arrays.h\"\n-#include \"queue.h\"\n-#include \"circularQueue.h\"\n-#include \"stack.h\"\n-#include \"linkedlist.h\"\n-#include \"doublylinkedlist.hpp\"\n-#include \"circularDoublyLinkedList.hpp\"\n-#include \"binaryTree.hpp\"\n-#include \"BSTTree.hpp\"\n-#include \"AVLTree.hpp\"\n-#include \"HeapTree.hpp\"\n-#include \"priorityQueue.hpp\"\n-#include \"graph.hpp\"\n-using namespace std;\n-\n-int main() {\n-\tGraph g;\n-\tg.addEdge(1, 2);\n-\tg.addEdge(2, 3);\n-\tg.addEdge(3, 5);\n-\tg.addEdge(, 0);\n-\tg.addEdge(2, 3);\n-\tg.addEdge(3, 3);\n-\n-\tcout << \"Following is Depth First Traversal\"\n-\t\t\t\" (starting from vertex 2) \\n\";\n-\n-\tg.DFS(2);\n-\n-\treturn 0;\n-}\n-#include <iostream>\n-#include \"arrays.h\"\n-#include \"queue.h\"\n-#include \"circularQueue.h\"\n-#include \"stack.h\"\n-#include \"linkedlist.h\"\n-#include \"doublylinkedlist.hpp\"\n-#include \"circularDoublyLinkedList.hpp\"\n-#include \"binaryTree.hpp\"\n-#include \"BSTTree.hpp\"\n-#include \"AVLTree.hpp\"\n-#include \"HeapTree.hpp\"\n-#include \"priorityQueue.hpp\"\n-#include \"graph.hpp\"\n-using namespace std;\n-\n-int main() {\n-\tGraph g;\n-\tg.addEdge(1, 2);\n-\tg.addEdge(3, 4);\n-\tg.addEdge(4, 5);\n-\tg.addEdge(, 0);\n-\tg.addEdge(2, 3);\n-\tg.addEdge(3, 3);\n-\n-\tcout << \"Following is Depth First Traversal\"\n-\t\t\t\" (starting from vertex 2) \\n\";\n-\n-\tg.DFS(2);\n-\n-\treturn 0;\n-}\n-#include <iostream>\n-#include \"arrays.h\"\n-#include \"queue.h\"\n-#include \"circularQueue.h\"\n-#include \"stack.h\"\n-#include \"linkedlist.h\"\n-#include \"doublylinkedlist.hpp\"\n-#include \"circularDoublyLinkedList.hpp\"\n-#include \"binaryTree.hpp\"\n-#include \"BSTTree.hpp\"\n-#include \"AVLTree.hpp\"\n-#include \"HeapTree.hpp\"\n-#include \"priorityQueue.hpp\"\n-#include \"graph.hpp\"\n-using namespace std;\n-\n-int main() {\n-\tGraph g;\n-\tg.addEdge(1, 2);\n-\tg.addEdge(3, 4);\n-\tg.addEdge(4, 5);\n-\tg.addEdge(2, 0);\n-\tg.addEdge(2, 3);\n-\tg.addEdge(3, 3);\n-\n-\tcout << \"Following is Depth First Traversal\"\n-\t\t\t\" (starting from vertex 2) \\n\";\n-\n-\tg.DFS(2);\n-\n-\treturn 0;\n-}\n"
+                },
+                {
+                    "date": 1704997192404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,13 @@\n \n int main() {\n \tGraph g;\n \tg.addEdge(1, 2);\n-\tg.addEdge(2, 1);\n+\tg.addEdge(2, 3);\n \tg.addEdge(3, 4);\n \tg.addEdge(4, 5);\n \tg.addEdge(3, 5);\n-\tg.addEdge(5, 6);\n+\tg.addEdge(5, 3);\n \n \tcout << \"Following is Depth First Traversal\"\n \t\t\t\" (starting from vertex 2) \\n\";\n \n"
+                },
+                {
+                    "date": 1704997209191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n int main() {\n \tGraph g;\n \tg.addEdge(1, 2);\n \tg.addEdge(2, 3);\n+\tg.addEdge(2, 3);\n \tg.addEdge(3, 4);\n \tg.addEdge(4, 5);\n \tg.addEdge(3, 5);\n \tg.addEdge(5, 3);\n"
+                }
+            ],
+            "date": 1704992740613,
+            "name": "Commit-0",
+            "content": "#include <iostream>\n#include \"arrays.h\"\n#include \"queue.h\"\n#include \"circularQueue.h\"\n#include \"stack.h\"\n#include \"linkedlist.h\"\n#include \"doublylinkedlist.hpp\"\n#include \"circularDoublyLinkedList.hpp\"\n#include \"binaryTree.hpp\"\n#include \"BSTTree.hpp\"\n#include \"AVLTree.hpp\"\n#include \"HeapTree.hpp\"\n#include \"priorityQueue.hpp\"\n#include \"graph.hpp\"\nusing namespace std;\n\nint main() {\n\tcreateGraph();\n\tdrawEgde(0, 1);\n\tdrawEgde(0, 2);\n\tdrawEgde(1, 2);\n\tdrawEgde(2, 3);\n\tdisplay();\n\n\treturn 0;\n}\n"
+        }
+    ]
+}

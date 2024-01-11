@@ -11,57 +11,23 @@
 #include "AVLTree.hpp"
 #include "HeapTree.hpp"
 #include "priorityQueue.hpp"
+#include "graph.hpp"
 using namespace std;
 
 int main() {
-	// HeapTree htree;
-	// htree.createMinHeapTree(6);
-	// htree.addMin(1);
-	// htree.addMin(2);
-	// htree.addMin(3);
-	// htree.addMin(4);
-	// htree.addMin(5);
-	// htree.addMin(6);
-	// cout << "Min Heap Tree: ";
-	// htree.showMinTree();
-	// cout << endl;
+	Graph g;
+	g.addEdge(1, 2);
+	g.addEdge(2, 3);
+	g.addEdge(1, 3);
+	g.addEdge(3, 4);
+	g.addEdge(4, 5);
+	g.addEdge(3, 5);
+	g.addEdge(5, 3);
 
-	// htree.createMaxHeapTree(8);
-	// htree.addMax(4);
-	// htree.addMax(3);
-	// htree.addMax(2);
-	// htree.addMax(6);
-	// htree.addMax(5);
-	// htree.addMax(8);
-	// htree.addMax(7);
-	// htree.addMax(1);
-	// cout << "Max Heap Tree: ";
-	// htree.showMaxTree();
+	cout << "Following is Depth First Traversal"
+			" (starting from vertex 2) \n";
 
-	// cout << endl;
-	// cout << "Delete min tree root: ";
-	// htree.minRootRemove();
-	// htree.showMinTree();
-
-	// cout << endl;
-	// cout << "Delete max tree root: ";
-	// htree.maxRootRemove();
-	// htree.showMaxTree();
-
-	// cout << endl;
-	// cout << "Sort max heap tree: ";
-	// htree.maxHeapSort();
-	// htree.showMaxTree();
-
-	insert(33, 9);
-	insert(21, 8);
-	insert(90, 6);
-	insert(32, 1);
-	insert(88, 2);
-
-	remove();
-
-	show();
+	g.DFS(2);
 
 	return 0;
 }
